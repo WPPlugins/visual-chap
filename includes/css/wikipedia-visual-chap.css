@@ -1,0 +1,375 @@
+/*
+   This file is part of Visual Chap.
+
+   Visual Chap is free software: you can redistribute it and/or modify
+   it under the terms of the wonderful GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   any later version.
+   
+   Visual Chap is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with Visual Chap. If not, see https://www.gnu.org/licenses/gpl-3.0.html .
+*/
+
+/* main div */
+div#wikipedia-visual-chap-box {
+    display: inline-block;
+    position: absolute;
+    text-align: center;
+    font-family: sans-serif;
+    overflow: hidden;
+    opacity: 0;
+    z-index; 0;
+}
+
+/* main scroll-able div */
+div#wikipedia-visual-chap-inner-container {
+    position: relative;
+    margin-left: 1px;
+    padding: 6px;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+/* main switch */
+div#wikipedia-visual-chap-box-switch {
+    display: block;
+    height: 50px;
+    cursor: pointer;
+    border: 1px solid;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    opacity: .85;
+    -moz-transition: opacity linear .2s;
+    -webkit-transition: opacity linear .2s;
+    transition: opacity linear .2s;
+}
+
+div#wikipedia-visual-chap-box-switch:hover {
+    opacity: 1;
+    -moz-transition: opacity linear .2s;
+    -webkit-transition: opacity linear .2s;
+    transition: opacity linear .2s;
+}
+
+/* logo */
+img#wikipedia-visual-chap-box-logo {
+    display: none;
+    position: absolute;
+    margin-top: 58px;
+    margin-left: -95px;
+    padding: 5px;
+    width: 40px;
+    height: 40px;
+    max-width: 40px;
+    max-height: 40px;
+    background-color: #fff;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-box-shadow: 0 0 4px 1px #333333 inset;
+    -ms-box-shadow: 0 0 4px 1px #333333 inset;
+    -moz-box-shadow: 0 0 4px 1px #333333 inset;
+    -webkit-box-shadow: 0 0 4px 1px #333333 inset;
+    box-shadow: 0 0 4px 1px #333333 inset;
+}
+
+div#wikipedia-visual-chap-box p {
+    margin: 1px 0;
+}
+
+div#wikipedia-visual-chap-inner-container p#wikipedia-visual-chap-name {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    -o-text-shadow: 0 0 2px;
+    -ms-text-shadow: 0 0 2px;
+    -moz-text-shadow: 0 0 2px;
+    -webkit-text-shadow: 0 0 2px;
+    text-shadow: 0 0 2px;
+}
+
+div#wikipedia-visual-chap-inner-container:not(.wikipedia-visual-chap-link-wiki-donate p a, .wikipedia-visual-chap-link-dev p a) p:nth-of-type(1) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-size: 18px;
+}
+
+div#wikipedia-visual-chap-inner-container p:nth-of-type(2) {
+    margin-top: 6px;
+    padding: 0 14px;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+    border-right: 3px dotted;
+}
+
+div#wikipedia-visual-chap-img-loading {
+    position: absolute;
+    text-align: center;
+}
+
+.fa-circle-o-notch {
+    margin-top: 50px;
+    opacity: .65;
+}
+
+a#wikipedia-visual-chap-display-title-link {
+    text-decoration: none;
+}
+
+h3#wikipedia-visual-chap-display-title {
+    margin-top: 30px;
+    padding-bottom: 5px;
+    font-size: 28px;
+    border-bottom: 1px solid gray;
+    -o-text-shadow: 0 0 2px;
+    -ms-text-shadow: 0 0 2px;
+    -moz-text-shadow: 0 0 2px;
+    -webkit-text-shadow: 0 0 2px;
+    text-shadow: 0 0 2px;
+}
+
+p#wikipedia-visual-chap-display-description {
+    padding: 0 6px 0 6px;
+    line-height: 1.2em;
+}
+
+a.wvc-main-img-details img {
+    -o-box-shadow: 0 0 8px 1px #030303;
+    -ms-box-shadow: 0 0 8px 1px #030303;
+    -moz-box-shadow: 0 0 8px 1px #030303;
+    -webkit-box-shadow: 0 0 8px 1px #030303;
+    box-shadow: 0 0 8px 1px #030303;
+}
+
+img.wvc-img-standby {
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    -o-box-shadow: none;
+    -ms-box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+img.wvc-img-active {
+    display: block;
+    margin: 12px auto;
+    padding: 6px;
+    background: rgb(242,245,246); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(242,245,246,1) 0%, rgba(227,234,237,1) 37%, rgba(200,215,220,1) 100%); /* FF */
+    background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* Chrome10,Safari6 */
+    background: linear-gradient(to bottom, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+.wvc-switch-standby {
+    width: 28px;
+    margin: 0 auto;
+    margin-top: 6px;
+    line-height: 50px;
+    font-size: 16px;
+    -moz-transition: width linear .85s;
+    -webkit-transition: width linear .85s;
+    transition: width linear .85s;
+}
+
+.wvc-switch-active {
+    line-height: 52px;
+    margin: 0 auto;
+    margin-top: 6px;
+    font-size: 32px;
+    -moz-transition: width linear .85s;
+    -webkit-transition: width linear .85s;
+    transition: width linear .85s;
+    -moz-transition: font-size linear .25s;
+    -webkit-transition: font-size linear .25s;
+    transition: font-size linear .25s;
+}
+
+.wvc-box-active {
+    /*
+-- TO FINISH!!! -- WP options for GNU background logo 
+background-image: url('https://www.gnu.org/graphics/official%20gnu.svg');
+   */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    -moz-transition: width linear .1s;
+    -webkit-transition: width linear .1s;
+    transition: width linear .1s;
+}
+
+.wvc-box-standby {
+    display: none;
+    width: 42px;
+    color: transparent;
+    background-color: transparent;
+    -moz-transition: width linear 1.1s;
+    -webkit-transition: width linear 1.1s;
+    transition: width linear 1.1s;
+}
+
+.wikipedia-visual-chap-active-item {
+    display: block;
+    opacity: 1;
+    -moz-transition: opacity linear .85s;
+    -webkit-transition: opacity linear .85s;
+    transition: opacity linear .85s;
+}
+.wikipedia-visual-chap-standby-item {
+    display: none;
+    opacity: 0;
+    max-height: 2px;
+    -moz-transition: opacity linear 0s;
+    -webkit-transition: opacity linear 0s;
+    transition: opacity linear 0s;
+}
+
+.wvc-word-standby {
+    border-bottom: 1px solid transparent;
+    -moz-transition: all linear .03s;
+    -webkit-transition: all linear .03s;
+    transition: all linear .03s;
+}
+
+.wvc-word-hover {
+    cursor: pointer;
+    border-bottom: 1px solid;
+    -moz-transition: all linear .03s;
+    -webkit-transition: all linear .03s;
+    transition: all linear .03s;
+}
+
+div.wvc-loading-image-standby {
+    display: none;
+    width: 0;
+    height: 0;
+    z-index: -1000;
+}
+
+div.wvc-loading-image-active {
+    display: block;
+    height: 100%;
+    margin-left: -6px;
+    z-index; 0;
+}
+
+
+/* LAYOUT SPECIALS */
+
+/* body stop scrolling */
+body.wvc-stop-body-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* box extended */
+.wvc-box-extended {
+    width: 480px;
+    margin-left: -438px;
+    -moz-transition: all linear .85s;
+    -webkit-transition: all linear .85s;
+    transition: all linear .85s;
+}
+/* box pocket */
+.wvc-box-pocket {
+    width: 280px;
+    margin-left: -238px;
+    -moz-transition: all linear .85s;
+    -webkit-transition: all linear .85s;
+    transition: all linear .85s;
+}
+
+/* main icon extended */
+.wvc-box-extended .wvc-switch-active {
+    width: 300px;
+}
+/* main img extended */
+.wvc-box-extended div a img.wvc-img-active {
+    max-width: 420px;
+}
+/* image loading splash extended */
+.wvc-box-extended div div.wvc-loading-image-active {
+    width: 492px;
+}
+
+/* main icon pocket */
+.wvc-box-pocket .wvc-switch-active {
+    width: 180px;
+}
+/* main img pocket */
+.wvc-box-pocket div a img.wvc-img-active {
+    max-width: 242px;
+}
+/* image loading splash pocket */
+.wvc-box-pocket div div.wvc-loading-image-active {
+    width: 292px;
+}
+
+/* credits links */
+.wikipedia-visual-chap-link-wiki-donate,
+.wikipedia-visual-chap-link-dev {
+    display: inline-block;
+    width: 100%;
+    padding: 2px;
+    font-size: 11px;
+    text-align: center;
+    border-bottom: 1px solid;
+}
+
+.wikipedia-visual-chap-link-wiki-donate p a,
+.wikipedia-visual-chap-link-dev p a {
+    text-decoration: none;
+}
+
+.wikipedia-visual-chap-both-credits {
+    width: 45%;
+    border: 1px solid;
+    -o-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+
+
+/* ANIMATIONS */
+
+@-webkit-keyframes img_loading {
+    0% {
+	-webkit-transform: rotateZ(0deg);
+    }
+    100% {
+	-webkit-transform: rotateZ(360deg);
+    }
+}
+
+@keyframes img_loading {
+    0% {
+	transform: rotateZ(0deg);
+    }
+    100% {
+	transform: rotateZ(360deg);
+    }
+}

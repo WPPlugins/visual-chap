@@ -1,0 +1,84 @@
+/*
+   This file is part of Visual Chap.
+
+   Visual Chap is free software: you can redistribute it and/or modify
+   it under the terms of the wonderful GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   any later version.
+   
+   Visual Chap is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with Visual Chap. If not, see https://www.gnu.org/licenses/gpl-3.0.html .
+*/
+
+div#wikipedia-visual-chap-admin-box p:first-child {
+    display: inline-block;
+}
+
+img#wikipedia-visual-chap-admin-logo {
+    float: right;
+    width: 54px;
+    margin-top: 4px;
+    margin-left: 5px;
+    padding: 6px;
+    background-color: #fff;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    -o-box-shadow: 0 0 4px 1px #333 inset;
+    -ms-box-shadow: 0 0 4px 1px #333 inset;
+    -moz-box-shadow: 0 0 4px 1px #333 inset;
+    -webkit-box-shadow: 0 0 4px 1px #333 inset;
+    box-shadow: 0 0 4px 1px #333 inset;
+}
+
+div#wikipedia-visual-chap-admin-box p:first-child,
+img#wikipedia-visual-chap-admin-logo {
+    vertical-align: middle;
+}
+
+div#wikipedia-visual-chap-admin-dev-container {
+    height: 45px;
+    margin: 25px 0 55px;
+}
+
+div#wikipedia-visual-chap-admin-dev-container a,
+p#wikipedia-visual-chap-admin-dev-p {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+img#wikipedia-visual-chap-admin-dev-logo {
+    width: 45px:
+    max-width: 45px:
+    height: 45px;
+    max-height: 45px;
+    margin-left: 5px;
+}
+
+input {
+    box-shadow: 0 0 3px .1px transparent;
+    transition: all linear .4s;
+}
+
+input:not(#wikipedia-visual-chap-section-main-margin-top):hover {
+    box-shadow: 0 0 3px .1px;
+    transition: all linear .4s;
+}
+
+form input[type=color]:hover,
+form input[type=range]:hover {
+    cursor: pointer;
+}
+
+span#wikipedia-visual-chap-admin-margin-top {
+    padding-top: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+}
